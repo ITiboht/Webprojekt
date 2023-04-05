@@ -29,12 +29,12 @@ Az oldal azon része, ahol jelenleg elérhető cipőket lehet keresni
 
 ### Collaborators
 
-  @0ptrk0
+  [@0ptrk0](https://github.com/0ptrk0)
   
-  @abelotM
+  [@abelotM](https://github.com/abelotM)
   
-  @KKrissK
+  [@KKrissK](https://github.com/KKrissK)
   
-  @Quevadish
+  [@Quevadish](https://github.com/Quevadish)
   
-  @ITiboht
+  [@ITiboht](https://github.com/ITiboht)
