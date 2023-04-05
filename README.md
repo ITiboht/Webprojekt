@@ -26,3 +26,15 @@ Az oldal azon része, ahol jelenleg elérhető cipőket lehet keresni
 > Filteres és név alapú keresés
 
 > Cipő adatok (Pl.:Méret, Szín)
+
+### Collaborators
+
+  @0ptrk0
+  
+  @abelotM
+  
+  @KKrissK
+  
+  @Quevadish
+  
+  @ITiboht
