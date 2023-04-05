@@ -8,7 +8,6 @@ Tartalma:
 Authenticator
 Main Page
 Shoe List
-
 ```
 
 ### Authenticator
