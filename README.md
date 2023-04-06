@@ -18,7 +18,7 @@ Külön felhasználó és adminisztrátor felhasználó létrehozása
 > Az adminisztrátor fiók képes új cipőt feltölteni, már létező cipőt le törölni az adatbázisból
 
 ### Main Page
-Egy egyszerú, tiszta **Main Page**
+Egy egyszerű, tiszta **Main Page**
 
 ### Shoe List
 Az oldal azon része, ahol jelenleg elérhető cipőket lehet keresni
