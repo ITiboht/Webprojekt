@@ -4,7 +4,6 @@ import goupb.webproject.Webproject.service.ShoesService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,7 +47,7 @@ public class ShoesController {
     @PutMapping("/update")
     public ResponseEntity<ShoesDTO> update(@RequestBody ShoesDTO shoesDTO){
         ShoesDTO updatedShoes = shoesService.update(shoesDTO);
-        return ResponseEntity.status(200).body(updatedShoes);
+        return ResponseEntity.status(201).body(updatedShoes);
     }
 
 }

@@ -40,7 +40,7 @@ public class UserController {
              userService.delete(id);
         return ResponseEntity.status(204).build();
     }
-    @PutMapping("/update/{id}")
+    @PutMapping("/update")
     public ResponseEntity<UserDTO> update( @RequestBody UserDTO userDTO){
         UserDTO updatedUser = userService.update(userDTO);
 

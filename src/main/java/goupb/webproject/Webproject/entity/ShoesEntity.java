@@ -1,13 +1,11 @@
 package goupb.webproject.Webproject.entity;
 
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -20,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ShoesEntity {
     @Id
+    @GeneratedValue
     private String id;
     private String brand;
     private String name;
