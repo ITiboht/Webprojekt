@@ -2,8 +2,6 @@ package goupb.webproject.Webproject.controller;
 import goupb.webproject.Webproject.dto.ShoesDTO;
 import goupb.webproject.Webproject.service.ShoesService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

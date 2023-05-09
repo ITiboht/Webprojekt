@@ -1,9 +1,6 @@
 package goupb.webproject.Webproject.service;
 
-import goupb.webproject.Webproject.dto.ShoesDTO;
 import goupb.webproject.Webproject.dto.UserDTO;
-import org.bson.types.ObjectId;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;

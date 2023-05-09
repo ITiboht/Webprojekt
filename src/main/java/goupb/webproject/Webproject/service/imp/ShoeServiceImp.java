@@ -7,13 +7,13 @@ import goupb.webproject.Webproject.exception.NotFoundException;
 import goupb.webproject.Webproject.repository.ShoeRepository;
 import goupb.webproject.Webproject.service.ShoesService;
 
-import org.bson.types.ObjectId;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ShoeServiceImp implements ShoesService {
@@ -46,6 +46,7 @@ public class ShoeServiceImp implements ShoesService {
     @Override
     public ShoesDTO create(ShoesDTO shoesDTO) {
         ShoesEntity shoesEntity = modelMapper.map(shoesDTO, ShoesEntity.class);
+        shoesEntity.setId(UUID.randomUUID().toString().split("-")[0]);
         ShoesEntity saveShoes = shoeRepository.save(shoesEntity);
         return modelMapper.map(saveShoes, ShoesDTO.class);
     }

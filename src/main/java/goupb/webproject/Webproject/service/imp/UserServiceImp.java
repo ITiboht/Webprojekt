@@ -5,13 +5,15 @@ import goupb.webproject.Webproject.entity.UserEntity;
 import goupb.webproject.Webproject.exception.NotFoundException;
 import goupb.webproject.Webproject.repository.UserRepository;
 import goupb.webproject.Webproject.service.UserService;
-import org.bson.types.ObjectId;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+
 @Service
 public class UserServiceImp implements UserService {
 
@@ -45,6 +47,7 @@ public class UserServiceImp implements UserService {
     @Override
     public UserDTO create(UserDTO userDTO) {
         UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
+        userEntity.setId(UUID.randomUUID().toString().split("-")[0]);
         UserEntity createdEntity = userRepository.save(userEntity);
         return modelMapper.map(createdEntity, UserDTO.class);
     }
