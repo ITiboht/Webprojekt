@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * Configuration for JWT related beans.
  */
 @Configuration
-public class JwtConfiguration {
+public class JwtConfig {
 
     @Autowired
     private JwtConfigProp JwtConfigProp;
