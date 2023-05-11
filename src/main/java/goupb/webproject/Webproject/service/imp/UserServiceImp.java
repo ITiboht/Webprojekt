@@ -48,6 +48,7 @@ public class UserServiceImp implements UserService {
     public UserDTO create(UserDTO userDTO) {
         UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
         userEntity.setId(UUID.randomUUID().toString().split("-")[0]);
+        userEntity.setAdmin(true);
         UserEntity createdEntity = userRepository.save(userEntity);
         return modelMapper.map(createdEntity, UserDTO.class);
     }
