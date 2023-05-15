@@ -42,4 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
+    //httpsecurity javaxot használ, és ezért nem jó neki a jakarta filter tipus
+
 }

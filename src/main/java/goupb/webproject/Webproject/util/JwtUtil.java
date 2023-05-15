@@ -1,6 +1,5 @@
 package goupb.webproject.Webproject.util;
 
-
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -23,14 +22,14 @@ public class JwtUtil {
     private final Algorithm algorithm;
     private final JWTVerifier jwtVerifier;
     private final DateUtil dateUtil;
-    private final JwtConfigProp jwtConfigProp;
+    private final JwtConfigProp jwtConfigurationProperties;
 
     public JwtUtil(Algorithm algorithm, JWTVerifier jwtVerifier, DateUtil dateUtil,
                    JwtConfigProp jwtConfigProp) {
         this.algorithm = algorithm;
         this.jwtVerifier = jwtVerifier;
         this.dateUtil = dateUtil;
-        this.jwtConfigProp = jwtConfigProp;
+        this.jwtConfigurationProperties = jwtConfigProp;
     }
 
     /**
@@ -41,7 +40,7 @@ public class JwtUtil {
      */
     public String createAndSignToken(String username) {
         return JWT.create()
-                .withIssuer(jwtConfigProp.getIssuer())
+                .withIssuer(jwtConfigurationProperties.getIssuer())
                 .withClaim(USERNAME_CLAIM, username)
                 .withExpiresAt(createExpirationDate())
                 .sign(algorithm);
@@ -64,7 +63,7 @@ public class JwtUtil {
 
     private Date createExpirationDate() {
         return Date.from(
-                dateUtil.now().toInstant().plus(jwtConfigProp.getTokenValidityInMinutes(), ChronoUnit.MINUTES)
+                dateUtil.now().toInstant().plus(jwtConfigurationProperties.getTokenValidityInMinutes(), ChronoUnit.MINUTES)
         );
     }
 
