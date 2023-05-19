@@ -49,7 +49,6 @@ public class SecurityConfiguration {
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
-        System.out.println("nemsajt");
         return http.build();
     }
 

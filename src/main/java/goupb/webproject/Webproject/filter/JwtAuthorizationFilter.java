@@ -69,7 +69,6 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
         try {
             doAuthorization(request);
-            System.out.println("DOFILTERintern");
         } catch (Exception e) {
             LOGGER.error("Authorization error", e);
         }
