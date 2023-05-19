@@ -25,10 +25,13 @@ public class AuthenticationController {
         // This is a dummy implementation of a user authentication.
         // You should place a valid implementation here, which queries a user from the database and validates
         // if the username and the password are correct!
+        System.out.println("sajt");
         authenticateUser(authenticationRequest);
 
         String username = "test";
         return jwtUtil.createAndSignToken(username);
+
+
     }
 
     private void authenticateUser(AuthenticationRequest authenticationRequest) {
