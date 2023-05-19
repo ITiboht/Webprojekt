@@ -2,6 +2,7 @@ package goupb.webproject.Webproject.service.imp;
 
 import goupb.webproject.Webproject.dto.UserDTO;
 import goupb.webproject.Webproject.entity.UserEntity;
+import goupb.webproject.Webproject.entity.UserRole;
 import goupb.webproject.Webproject.exception.NotFoundException;
 import goupb.webproject.Webproject.repository.UserRepository;
 import goupb.webproject.Webproject.service.UserService;
@@ -48,6 +49,7 @@ public class UserServiceImp implements UserService {
     public UserDTO create(UserDTO userDTO) {
         UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
         userEntity.setId(UUID.randomUUID().toString().split("-")[0]);
+        if(userEntity.getRole() != UserRole.ADMIN)userEntity.setRole(UserRole.USER);
         UserEntity createdEntity = userRepository.save(userEntity);
         return modelMapper.map(createdEntity, UserDTO.class);
     }

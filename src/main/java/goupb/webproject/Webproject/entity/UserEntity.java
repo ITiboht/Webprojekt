@@ -1,5 +1,7 @@
 package goupb.webproject.Webproject.entity;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +20,6 @@ public class UserEntity {
     private String userName;
     private String email;
     private String password;
-    private boolean admin;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 }

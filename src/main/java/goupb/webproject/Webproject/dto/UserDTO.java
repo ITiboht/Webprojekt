@@ -1,5 +1,6 @@
 package goupb.webproject.Webproject.dto;
 
+import goupb.webproject.Webproject.entity.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,5 +14,5 @@ public class UserDTO {
     private String userName;
     private String email;
     private String password;
-    private boolean admin;
+    private UserRole role;
 }
