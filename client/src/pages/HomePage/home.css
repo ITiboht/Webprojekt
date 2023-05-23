@@ -1,11 +1,10 @@
 body {
     background-color: #333;
-    background: radial-gradient(circle, #444444 0%, #333 35%, #000000 100%)
+    background: radial-gradient(circle, #444444 0%, #333 25%, #000000 100%)
 }
   
   .container {
     display: flex;
-    /*flex-direction: column;*/
     text-transform: uppercase;
     color: #e7b920;
     margin: 5%

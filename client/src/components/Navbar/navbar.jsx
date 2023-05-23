@@ -6,25 +6,37 @@ export default function Navbar() {
         const sidepanel = document.querySelector('.sidepanel');
         sidepanel.classList.toggle('show');
       }
+      
     return (
         <nav className="nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/store">Shop</a></li>
-                <li><a href="/cart">Cart</a></li>
+                <CustomLink href="/">Home</CustomLink>
+                <CustomLink href="/store">Store</CustomLink>
+                <CustomLink href="/cart">Cart</CustomLink>
                 <li class="menu-btn"><a href="#" onClick={toggleMenu}>=</a>
                 <div class="sidepanel"><ul class="dropdown-menu">
-                    <li><a href="#" onClick={toggleMenu}>X</a></li>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/shop">Shop</a></li>
-                    <li><a href="/cart">Cart</a></li>
-                    <li><a href="/shipping">Shipping</a></li>
-                    <li><a href="/account">Account</a></li>
-                    <li><a href="/about">About us</a></li>
+                    <li>
+                        <a href="#" onClick={toggleMenu}>X</a>
+                    </li>
+                    <CustomLink href="/">Home</CustomLink>
+                    <CustomLink href="/store">Store</CustomLink>
+                    <CustomLink href="/cart">Cart</CustomLink>
+                    <CustomLink href="/shipping">Shipping</CustomLink>
+                    <CustomLink href="/account">Account</CustomLink>
+                    <CustomLink href="/contact">Contact</CustomLink>
                 </ul>
             </div>
         </li>
     </ul>
     </nav>
     )
+}
+
+function CustomLink({href, children, ...props}) {
+    const path = window.location.pathname;
+    return (
+            <li className={path == href ? "active" : ""}>
+                <a href={href} {...props}>{children}</a>
+            </li>
+        )
 }

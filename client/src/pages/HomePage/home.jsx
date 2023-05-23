@@ -3,14 +3,8 @@ import './home.css';
   
 const Home = () => {
 
-  const toggleMenu = () => {
-    const sidepanel = document.querySelector('.sidepanel');
-    sidepanel.classList.toggle('show');
-  }
-
   return (
-    <div>
-    <div class="container">
+    <div className='container'>
         <div class="text">
             <h1>ShoeName</h1>
             <ul>
@@ -23,7 +17,6 @@ const Home = () => {
         <div class="content">
             
         </div>
-    </div>
     </div>
   );
 };
