@@ -1,3 +1,5 @@
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+
 import logo from '../../images/logo.png';
 import './navbar.css'
 
@@ -10,20 +12,20 @@ export default function Navbar() {
     return (
         <nav className="nav">
             <ul>
-                <CustomLink href="/">Home</CustomLink>
-                <CustomLink href="/store">Store</CustomLink>
-                <CustomLink href="/cart">Cart</CustomLink>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="/store">Store</CustomLink>
+                <CustomLink to="/cart">Cart</CustomLink>
                 <li class="menu-btn"><a href="#" onClick={toggleMenu}>=</a>
                 <div class="sidepanel"><ul class="dropdown-menu">
                     <li>
                         <a href="#" onClick={toggleMenu}>X</a>
                     </li>
-                    <CustomLink href="/">Home</CustomLink>
-                    <CustomLink href="/store">Store</CustomLink>
-                    <CustomLink href="/cart">Cart</CustomLink>
-                    <CustomLink href="/shipping">Shipping</CustomLink>
-                    <CustomLink href="/account">Account</CustomLink>
-                    <CustomLink href="/contact">Contact</CustomLink>
+                    <CustomLink to="/">Home</CustomLink>
+                    <CustomLink to="/store">Store</CustomLink>
+                    <CustomLink to="/cart">Cart</CustomLink>
+                    <CustomLink to="/shipping">Shipping</CustomLink>
+                    <CustomLink to="/account">Account</CustomLink>
+                    <CustomLink to="/contact">Contact</CustomLink>
                 </ul>
             </div>
         </li>
@@ -32,11 +34,12 @@ export default function Navbar() {
     )
 }
 
-function CustomLink({href, children, ...props}) {
-    const path = window.location.pathname;
+function CustomLink({to, children, ...props}) {
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true });
     return (
-            <li className={path == href ? "active" : ""}>
-                <a href={href} {...props}>{children}</a>
+            <li className={isActive ? "active" : ""}>
+                <Link to={to} {...props}>{children}</Link>
             </li>
         )
 }

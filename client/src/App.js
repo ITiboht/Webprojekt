@@ -1,3 +1,5 @@
+import {Route, Routes} from 'react-router-dom'
+
 import './App.css';
 import Navbar from './components/Navbar/navbar';
 import Home from './pages/HomePage/home';
@@ -8,6 +10,7 @@ import Account from './pages/AccountPage/account';
 import About from './pages/AboutPage/about';
 
 function App() {
+  /*
   let Component
   switch (window.location.pathname) {
     case "/":
@@ -29,10 +32,18 @@ function App() {
       Component = About;
     break;
   }
+  */
   return (
     <>
       <Navbar />
-      <Component />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </>
     
   );
