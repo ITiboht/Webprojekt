@@ -28,7 +28,7 @@
     height: 100%;
     width: 500px;
     background-color: #181818;
-    transition: right 0.3s ease-out;
+    transition: right 0.7s ease-out;
     z-index: 999;
   }
 
@@ -72,11 +72,10 @@
     color: #e7b920;
   }
 
-  .container.container.blur {
-    transition: all 0.3s ease-in-out;
-    filter: blur(3px);
+  .container{
+    transition: all 0.7s ease-in-out;
   }
 
-  .container {
-    filter: blur(0px);
+  .container.blur {
+    filter: blur(3px);
   }
