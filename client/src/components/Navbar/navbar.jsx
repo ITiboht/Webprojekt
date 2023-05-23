@@ -1,3 +1,4 @@
+import logo from '../../images/logo.png';
 import './navbar.css'
 
 export default function Navbar() {
@@ -8,8 +9,8 @@ export default function Navbar() {
     return (
         <nav className="nav">
             <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/store">Shop</a></li>
                 <li><a href="/cart">Cart</a></li>
                 <li class="menu-btn"><a href="#" onClick={toggleMenu}>=</a>
                 <div class="sidepanel"><ul class="dropdown-menu">

@@ -1,8 +1,12 @@
 import React from 'react'
 import './store.css';
 
-export const store = () => {
+const Store = () => {
   return (
-    <div>store</div>
-  )
+    <div className='Store-Page'>
+      <h1>Store</h1>
+    </div>
+  );
 }
+
+export default Store;
