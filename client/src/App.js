@@ -34,8 +34,9 @@ function App() {
   }
   */
   return (
-    <>
+    <div className='body'>
       <Navbar />
+      <div className='container'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
@@ -44,8 +45,8 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </>
-    
+      </div>
+    </div>
   );
 }
 

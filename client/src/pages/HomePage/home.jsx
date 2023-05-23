@@ -1,22 +1,19 @@
 import React from 'react';
 import './home.css';
+import logo from '../../images/logo.png';
   
 const Home = () => {
 
   return (
-    <div className='container'>
-        <div class="text">
-            <h1>ShoeName</h1>
-            <ul>
-                <li>márka</li>
-                <li>méret</li>
-                <li>nem</li>
-                <li>ár</li>
-            </ul>
-        </div>
-        <div class="content">
-            
-        </div>
+    <div className='Home-Page'>
+        <ul className='Shoe-Data'>
+          <li className='Shoe-Name'>ShoeName</li>
+          <li>ShoeBrand</li>
+          <li>ShoeSize</li>
+          <li>GenderType</li>
+          <li>Colors</li>
+        </ul>
+        <img className='Shoe-Image' src={logo}/>
     </div>
   );
 };

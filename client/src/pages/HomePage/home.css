@@ -1,24 +1,27 @@
-body {
-    background-color: #333;
-    background: radial-gradient(circle, #444444 0%, #333 25%, #000000 100%)
-}
-  
-  .container {
+  .Home-Page {
     display: flex;
+    padding: 10px;
     text-transform: uppercase;
-    color: #e7b920;
-    margin: 5%
+    color: #fff;
   }
 
-  .container .text li {
-    color:#ddd;
+  .Home-Page ul {
     list-style-type: none;
     text-decoration: none;
-    align-content: center;
-    margin: 10px;
   }
 
-  .container .content {
-    padding-left: 5%;
-    flex-direction: row;
+  .Shoe-Name {
+    font-size: 18px;
+    margin: 3vh;
+    color:  #e7b920;
   }
+
+  .Home-Page ul li {
+    padding: 1vh;
+  }
+
+  .Shoe-Image {
+    
+  }
+
+  

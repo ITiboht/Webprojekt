@@ -7,7 +7,12 @@ export default function Navbar() {
     const toggleMenu = () => {
         const sidepanel = document.querySelector('.sidepanel');
         sidepanel.classList.toggle('show');
-      }
+    }
+
+    const bodyBlur = () => {
+            const body = document.querySelector('.container');
+            body.classList.toggle('blur');
+    }
       
     return (
         <nav className="nav">
@@ -15,10 +20,10 @@ export default function Navbar() {
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/store">Store</CustomLink>
                 <CustomLink to="/cart">Cart</CustomLink>
-                <li class="menu-btn"><a href="#" onClick={toggleMenu}>=</a>
+                <li class="menu-btn"><a href="#" onClick={() => {toggleMenu();bodyBlur();}}>=</a>
                 <div class="sidepanel"><ul class="dropdown-menu">
                     <li>
-                        <a href="#" onClick={toggleMenu}>X</a>
+                        <a href="#" onClick={() => {toggleMenu();bodyBlur();}}>X</a>
                     </li>
                     <CustomLink to="/">Home</CustomLink>
                     <CustomLink to="/store">Store</CustomLink>
