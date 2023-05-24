@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserEntity {
     @Id
     private String id;
-    private String userName;
+    private String username;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)

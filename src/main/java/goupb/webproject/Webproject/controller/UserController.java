@@ -24,6 +24,11 @@ public class UserController {
         List<UserDTO> allUser = userService.findAll();
         return allUser;
     }
+    @GetMapping("/findbyuser")
+    public Optional<UserDTO> findUser(@RequestBody UserDTO userDTO){
+        Optional<UserDTO> findUser = userService.findByUsername(userDTO.getUsername());
+        return findUser;
+    }
     @GetMapping("/all/{id}")
     public Optional<UserDTO> findById(@PathVariable String id){
         return userService.findById(id);

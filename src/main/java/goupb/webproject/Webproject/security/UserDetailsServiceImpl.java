@@ -1,6 +1,9 @@
 package goupb.webproject.Webproject.security;
 import java.util.Collections;
 
+import goupb.webproject.Webproject.entity.UserEntity;
+import goupb.webproject.Webproject.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,14 +16,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
+    private UserRepository userRepository;
+    @Autowired
+    public UserDetailsServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Dummy implementation of a user look-up.
-        // You should place a valid implementation here, which queries a user from the database, then
-        // populate the result of this method with the correct values.
-        findUser(username);
+        UserEntity userEntity = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        return new User("test", "password", Collections.emptyList());
+        return User.builder()
+                .username(userEntity.getUsername())
+                .password(userEntity.getPassword())
+                .roles(userEntity.getRole())
+                .build();
     }
 
     private void findUser(String username) {

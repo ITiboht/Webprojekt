@@ -1,6 +1,7 @@
 package goupb.webproject.Webproject.controller;
 
 import goupb.webproject.Webproject.request.AuthenticationRequest;
+import goupb.webproject.Webproject.service.UserService;
 import goupb.webproject.Webproject.util.JwtUtil;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/authentication")
 public class AuthenticationController {
 
+    private UserService userService;
     private final JwtUtil jwtUtil;
 
     public AuthenticationController(JwtUtil jwtUtil) {
@@ -34,9 +36,15 @@ public class AuthenticationController {
     }
 
     private void authenticateUser(AuthenticationRequest authenticationRequest) {
-        if (!"test".equals(authenticationRequest.getUsername()) || !"password".equals(authenticationRequest.getPassword())) {
+        if (!userService.findByUsername().equals(authenticationRequest.getUsername()) || !"password".equals(authenticationRequest.getPassword())) {
             throw new RuntimeException("Authentication failed");
         }
+    /*private void authenticateUser(AuthenticationRequest authenticationRequest) {
+        if (!userService.findById(authenticationRequest.getUsername()).equals(authenticationRequest.getUsername()) || !"password".equals(authenticationRequest.getPassword())) {
+            throw new RuntimeException("Authentication failed");
+        }
+
+        */
     }
 
 }
