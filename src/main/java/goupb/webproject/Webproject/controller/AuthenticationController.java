@@ -7,6 +7,7 @@ import goupb.webproject.Webproject.request.AuthenticationRequest;
 import goupb.webproject.Webproject.service.UserService;
 import goupb.webproject.Webproject.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +26,9 @@ public class AuthenticationController {
     private UserService userService;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     private final JwtUtil jwtUtil;
 
     public AuthenticationController(JwtUtil jwtUtil) {
@@ -47,7 +51,7 @@ public class AuthenticationController {
         Optional<UserDTO> authrequesterDB = userService.findByUsername(authenticationRequest.getUsername());
         if (authrequesterDB.isPresent()) {
             UserDTO userfound = authrequesterDB.get();
-            if(!userfound.getPassword().equals(authenticationRequest.getPassword())) {
+            if(!passwordEncoder.matches((authenticationRequest.getPassword()),userfound.getPassword())) {
                 throw new RuntimeException("Authentication failed");
             }
 

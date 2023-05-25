@@ -3,7 +3,9 @@ package goupb.webproject.Webproject.controller;
 import goupb.webproject.Webproject.dto.UserDTO;
 import goupb.webproject.Webproject.service.UserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class UserController {
 
     private UserService userService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public UserController(UserService userService) {
         this.userService = userService;

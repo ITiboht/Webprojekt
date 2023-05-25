@@ -9,6 +9,7 @@ import goupb.webproject.Webproject.service.UserService;
 import goupb.webproject.Webproject.configuration.SecurityConfiguration;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,7 @@ public class UserServiceImp implements UserService {
 
    private UserRepository userRepository;
    private ModelMapper modelMapper;
+   @Autowired
    private PasswordEncoder passwordEncoder;
 
     public UserServiceImp(ModelMapper modelMapper,UserRepository userRepository) {
