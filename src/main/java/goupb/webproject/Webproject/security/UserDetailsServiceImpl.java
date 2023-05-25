@@ -1,5 +1,7 @@
 package goupb.webproject.Webproject.security;
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 import goupb.webproject.Webproject.entity.UserEntity;
 import goupb.webproject.Webproject.repository.UserRepository;
@@ -24,20 +26,24 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity userEntity = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        return User.builder()
-                .username(userEntity.getUsername())
-                .password(userEntity.getPassword())
-                .roles(userEntity.getRole())
-                .build();
-    }
-
-    private void findUser(String username) {
-        if (!"test".equals(username)) {
-            throw new RuntimeException("User not found");
+        Optional<UserEntity> user = userRepository.findByUsername(username);
+        if (user.isPresent()) {
+            UserEntity userEntity = user.get();
+            List<String> roles = Collections.singletonList(userEntity.getRole().name()); // Convert UserRole enum to String
+            return User.builder()
+                    .username(userEntity.getUsername())
+                    .password(userEntity.getPassword())
+                    .roles(roles.toArray(new String[0]))
+                    .build();
+        } else {
+            throw new UsernameNotFoundException("User not found");
         }
+
+
     }
+
+
+
 
 }
