@@ -15,7 +15,7 @@
     margin-top: 10vh;
     display: flex;
     background-color: #535353;
-    align-items: start;
+    align-items: flex-start;
     position: relative;
     flex-direction: column;
 }
