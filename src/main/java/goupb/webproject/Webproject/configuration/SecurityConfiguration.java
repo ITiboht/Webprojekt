@@ -50,6 +50,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests()
                 .requestMatchers("/authentication").permitAll()
                 .requestMatchers("/users/post").permitAll()
+                .requestMatchers("/shoes/all").permitAll()
+                .requestMatchers("/shoes/all/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
