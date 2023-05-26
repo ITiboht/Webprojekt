@@ -45,8 +45,10 @@ export default function Navbar() {
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/store">Store</CustomLink>
                 <CustomLink to="/cart">Cart</CustomLink>
-                <li className="menu-btn"><a onClick={clickHandler}>=</a>
-                <div className="sidepanel"><ul className="dropdown-menu">
+                <li className="menu-btn">
+                    <a onClick={clickHandler}>=</a>
+                <div className="sidepanel">
+                    <ul className="dropdown-menu">
                     <li>
                         <a onClick={clickHandler}>X</a>
                     </li>

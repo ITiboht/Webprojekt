@@ -46,6 +46,7 @@
   }
 
   .Slider {
+    user-select: none;
     position: absolute;
     font-size: 3vh;
     bottom: 5vh;
