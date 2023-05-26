@@ -13,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class UserServiceImp implements UserService {
@@ -63,7 +60,7 @@ public class UserServiceImp implements UserService {
     public UserDTO create(UserDTO userDTO) {
         UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
         userEntity.setId(UUID.randomUUID().toString().split("-")[0]);
-        if(userEntity.getRole() != UserRole.ADMIN)userEntity.setRole(UserRole.USER);
+        userEntity.setRole(UserRole.USER);
         userEntity.setPassword( passwordEncoder.encode(userEntity.getPassword()));
         UserEntity createdEntity = userRepository.save(userEntity);
         return modelMapper.map(createdEntity, UserDTO.class);

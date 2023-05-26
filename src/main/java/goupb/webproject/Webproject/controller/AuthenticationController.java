@@ -4,6 +4,7 @@ import goupb.webproject.Webproject.dto.UserDTO;
 import goupb.webproject.Webproject.entity.UserEntity;
 import goupb.webproject.Webproject.repository.UserRepository;
 import goupb.webproject.Webproject.request.AuthenticationRequest;
+import goupb.webproject.Webproject.security.UserDetailsServiceImpl;
 import goupb.webproject.Webproject.service.UserService;
 import goupb.webproject.Webproject.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class AuthenticationController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -55,11 +58,11 @@ public class AuthenticationController {
                 throw new RuntimeException("Authentication failed");
             }
 
-
         }
         else {
             throw new RuntimeException("Authentication failed");
         }
+
 
     /*private void authenticateUser(AuthenticationRequest authenticationRequest) {
         if (!userService.findById(authenticationRequest.getUsername()).equals(authenticationRequest.getUsername()) || !"password".equals(authenticationRequest.getPassword())) {
