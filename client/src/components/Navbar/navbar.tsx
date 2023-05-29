@@ -1,17 +1,42 @@
+import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
 import logo from '../../images/logo.png';
-import './navbar.css'
+import './navbar.css';
+
+interface CustomLinkProps {
+    to: string;
+    children: React.ReactNode;
+}
+
+function CustomLink({ to, children, ...props }: CustomLinkProps): JSX.Element {
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  
+    return (
+      <li className={isActive ? "active" : ""}>
+        <Link to={to} {...props}>{children}</Link>
+      </li>
+    );
+  }
 
 export default function Navbar() {
-    const toggleMenu = () => {
-        const sidepanel = document.querySelector('.sidepanel');
-        sidepanel.classList.toggle('show');
-    }
+
+        const toggleMenu = () => {
+            const sidepanel = document.querySelector('.sidepanel');
+            sidepanel?.classList.toggle('show');
+        }
+
+    
 
     const bodyBlur = () => {
             const body = document.querySelector('.container');
-            body.classList.toggle('blur');
+            body?.classList.toggle('blur');  
+    }
+
+    const clickHandler = () => {
+        bodyBlur();
+        toggleMenu();
     }
       
     return (
@@ -20,10 +45,10 @@ export default function Navbar() {
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/store">Store</CustomLink>
                 <CustomLink to="/cart">Cart</CustomLink>
-                <li class="menu-btn"><a href="#" onClick={() => {toggleMenu();bodyBlur();}}>=</a>
-                <div class="sidepanel"><ul class="dropdown-menu">
+                <li className="menu-btn"><a onClick={clickHandler}>=</a>
+                <div className="sidepanel"><ul className="dropdown-menu">
                     <li>
-                        <a href="#" onClick={() => {toggleMenu();bodyBlur();}}>X</a>
+                        <a onClick={clickHandler}>X</a>
                     </li>
                     <CustomLink to="/">Home</CustomLink>
                     <CustomLink to="/store">Store</CustomLink>
@@ -39,6 +64,7 @@ export default function Navbar() {
     )
 }
 
+/*
 function CustomLink({to, children, ...props}) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
@@ -48,3 +74,4 @@ function CustomLink({to, children, ...props}) {
             </li>
         )
 }
+*/

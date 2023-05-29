@@ -1,13 +1,15 @@
+import React from 'react';
 import {Route, Routes} from 'react-router-dom'
 
 import './App.css';
-import Navbar from './components/Navbar/navbar';
-import Home from './pages/HomePage/home';
-import Store from './pages/StorePage/store';
-import Cart from './pages/CartPage/cart';
-import Shipping from './pages/ShippingPage/shipping';
-import Account from './pages/AccountPage/account';
-import About from './pages/AboutPage/about';
+import logo from './images/logo.png';
+import Navbar from './components/Navbar/navbar.tsx';
+import Home from './pages/HomePage/home.tsx';
+import Store from './pages/StorePage/store.tsx';
+import Cart from './pages/CartPage/cart.tsx';
+import Shipping from './pages/ShippingPage/shipping.tsx';
+import Account from './pages/AccountPage/account.tsx';
+import About from './pages/AboutPage/about.tsx';
 
 function App() {
   /*
@@ -36,7 +38,7 @@ function App() {
   return (
     <div className='body'>
       <Navbar />
-      <div className='container'>
+      <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store />} />
