@@ -4,43 +4,26 @@ import logo from '../../images/logo.png';
 
 const Store = () => {
 
-  const toggleBrand = () => {
-    const brand = document.querySelector('.Brand');
-    brand?.classList.toggle('show');
-    }
-    
-  const toggleSize = () => {
-    const brand = document.querySelector('.Size');
-    brand?.classList.toggle('show');
-    }
-
-  const toggleGender = () => {
-    const brand = document.querySelector('.Gender');
-    brand?.classList.toggle('show');
-    }
-
-  const toggleColor = () => {
-    const brand = document.querySelector('.Color');
-    brand?.classList.toggle('show');
-    }
-
   return (
     <div className='Store-Page'>
-      <h1 className='Header'>Explore the possibilities</h1>
-      <a>Great deals for great shoes!</a>
-      <div className='Store-Filter'>
-        <div onClick={toggleBrand}>
+      <div className='row'>
+        <div className='col'>
+        <h1 className='Header'>Explore the possibilities</h1>
+        <a>Great deals for great shoes!</a>
+        </div>
+      <div className='row'>
+        <div className='col filter'>
+        <div className='Store-Filter'>
+        <div>
           <span>Brand</span>
           <ul className='Brand'>
             <li>
-              <label className='container'>Nike
-                <input type='checkbox' />
-                <span className='customCheck'></span>
-              </label>
+            <input type='checkbox' />
+              <label>Nike</label>
             </li>
           </ul>
         </div>
-        <div onClick={toggleSize}>
+        <div>
           <span>Size</span>
           <ul className='Size'>
             <li>
@@ -49,7 +32,7 @@ const Store = () => {
             </li>
           </ul>
         </div>
-        <div onClick={toggleGender}>
+        <div>
           <span>Gender</span>
           <ul className='Gender'>
             <li>
@@ -58,7 +41,7 @@ const Store = () => {
             </li>
           </ul>
         </div>
-        <div onClick={toggleColor}>
+        <div>
           <span>Color</span>
           <ul className='Color'>
             <li>
@@ -68,9 +51,93 @@ const Store = () => {
           </ul>
         </div>  
       </div>
-      <div className='Store-Grid'>
-          
         </div>
+        <div className='col'>
+        <div className='Store-Grid'>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+          <div className='Store-Item'>
+            <img src={logo} alt='logo' />
+            <div className='Store-Item-Info'>
+              <h3>Name</h3>
+              <h4>Cost</h4>
+              <button>Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
     </div>
     
   );

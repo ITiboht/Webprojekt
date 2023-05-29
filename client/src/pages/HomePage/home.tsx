@@ -14,9 +14,7 @@ const Home = () => {
           <li>GenderType</li>
           <li>Colors</li>
         </ul>
-        <div className='To-Cart'>
-          <h1>Add to cart</h1>
-        </div>
+        <button className='Add-Shoe'>Add to cart</button>
         <img className='Shoe-Image' src={logo} alt='Hello'/>
         <div className='Slider'>
         <span className='Left-Arrow'>←</span>
