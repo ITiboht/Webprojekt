@@ -16,12 +16,12 @@
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
+    width: 95vh;
     flex: 1;
 }
 
 .col.filter {
-    flex: 0;
-    
+    flex: 0;  
 }
 
 .Store-Page .Header {
@@ -59,6 +59,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 5vh;
+    margin-right: 5vh;
     height: 60vh;
     overflow-y: scroll;
 }
@@ -80,13 +81,14 @@
 .Store-Item img {
     width: 100%;
 }
+
 .Store-Item button {
     position: absolute;
     justify-content: flex-end;
     width: 40%;
     height: 15%;
-    top: 70%;
-    right: 10%;
+    right: 2vh;
+    bottom: 2vh;
     border-radius: 2vh;
     background-color: black;
     color: #ddd;

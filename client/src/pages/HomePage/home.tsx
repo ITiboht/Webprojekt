@@ -1,11 +1,12 @@
 import React from 'react';
 import './home.css';
 import logo from '../../images/logo.png';
+import HomeData from '../../components/http/HomeData.tsx';
   
 const Home = () => {
 
-  return (
-    <div className='Home-Page'>
+  /*
+  <div className='Home-Page'>
       <div className='Home-Box'>
         <ul className='Shoe-Data'>
           <li className='Shoe-Name'>ShoeName</li>
@@ -25,6 +26,10 @@ const Home = () => {
       </div>
       </div>
     </div>
+    */
+
+  return (
+    <HomeData />
   );
 };
   

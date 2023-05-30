@@ -10,31 +10,9 @@ import Cart from './pages/CartPage/cart.tsx';
 import Shipping from './pages/ShippingPage/shipping.tsx';
 import Account from './pages/AccountPage/account.tsx';
 import About from './pages/AboutPage/about.tsx';
+import DataFetching from './components/http/DataFetching.tsx';
 
 function App() {
-  /*
-  let Component
-  switch (window.location.pathname) {
-    case "/":
-      Component = Home;
-      break;
-    case "/store":
-      Component = Store;
-      break;
-    case "/cart":
-      Component = Cart;
-      break;
-    case "/shipping":
-      Component = Shipping;
-      break;
-    case "/account":
-      Component = Account;
-      break;
-    case "/about":
-      Component = About;
-    break;
-  }
-  */
   return (
     <div className='body'>
       <Navbar />
