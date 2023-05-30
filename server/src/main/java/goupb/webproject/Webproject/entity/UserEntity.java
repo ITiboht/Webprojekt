@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+import java.util.Set;
+
 
 @Document(collection = "Users")
 @Data
@@ -17,9 +20,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserEntity {
     @Id
     private String id;
-    private String userName;
+    private String username;
     private String email;
     private String password;
-    @Enumerated(EnumType.STRING)
     private UserRole role;
+    private Set<UserRole> roles;
 }

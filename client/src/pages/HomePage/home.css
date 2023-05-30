@@ -5,13 +5,13 @@
     color: #fff;
   }
 
-  .Home-Page ul {
+  .Shoe-Data {
     list-style-type: none;
     text-decoration: none;
   }
 
   .Shoe-Name {
-    font-size: 18px;
+    font-size: 5vh;
     margin: 3vh;
     color:  #e7b920;
   }
@@ -20,8 +20,38 @@
     padding: 1vh;
   }
 
-  .Shoe-Image {
-    
+  .Home-Box {
+    position: relative;
+    display: flex;
+    margin: auto;
+    margin-top: 5vh;
+    border: 2px solid #e7b920;
+    padding: 5vh;
+    width: 180vh;
+    height: 60vh;
+    border-top-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+  }
+  
+  .Add-Shoe {
+    position: absolute;
+    border-radius: 2vh;
+    width: 30vh;
+    height: 10vh;
+    background: linear-gradient(to right, #7a6212, #e7b920);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2vh;
+    right: 5vh;
+    bottom: 5vh;
+  }
+
+  .Slider {
+    user-select: none;
+    position: absolute;
+    font-size: 3vh;
+    bottom: 5vh;
+    left: 5vh;
   }
 
   

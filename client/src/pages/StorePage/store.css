@@ -1,10 +1,27 @@
 .Store-Page {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     width: fit-content;
     margin-left: 3vh;
     margin-top: 10vh;
     color: #ddd;
+}
+.row {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    width: 95vh;
+    flex: 1;
+}
+
+.col.filter {
+    flex: 0;  
 }
 
 .Store-Page .Header {
@@ -12,13 +29,67 @@
 }
 
 .Store-Filter {
-    margin-top: 10vh;
-    display: flex;
-    background-color: #535353;
-    align-items: start;
-    position: relative;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        column-count: 1;
+        height: 50vh;
+        width: 30vh;
+        position: relative;
+        margin-top: 5vh;
+        padding: 5vh;
+        background-color: #535353;
+        justify-content: flex-start;
+        user-select: none;
+        text-transform: uppercase;
+        list-style-type: none;
+}
+
+.Store-Filter ul {
+    text-transform: capitalize;
+    display: inline;
+    list-style-type: none;
+}
+
+.Store-Filter li {
+    display: block;
+    margin-left: 1vh;
 }
 
 .Store-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+    margin-right: 5vh;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+.Store-Item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #ddd;
+    border-radius: 3vh;
+    color: black;
+    margin-left: 4vh;
+    margin-bottom: 4vh;
+    padding: 3vh;
+    width: 20vh;
+    height: fit-content;
+}
+
+.Store-Item img {
+    width: 100%;
+}
+
+.Store-Item button {
+    position: absolute;
+    justify-content: flex-end;
+    width: 40%;
+    height: 15%;
+    right: 2vh;
+    bottom: 2vh;
+    border-radius: 2vh;
+    background-color: black;
+    color: #ddd;
 }

@@ -1,3 +1,72 @@
 .Cart-Page {
-    color: #ddd;
+    display: flex;
+    padding: 10px;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    text-transform: uppercase;
+    color: #e7b920;
+}
+
+.Shipping-Text {
+    font-size: 1vh;
+    margin-top: 7vh;
+    margin-left: 0vh;
+    color: #fff;
+}
+
+.Cart-Box {
+    position: relative;
+    display: flex;
+    margin: 5vh;
+    margin-left: 0vh;
+    margin-top: 9vh;
+    border: 3px solid #e7b920;
+    padding: 1vh;
+    width: 120vh;
+    height: 60vh;
+    border-top-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.Payment-Image {
+    position: absolute;
+    right: 5vh;
+    bottom: 13vh;
+    width: 25%;
+    height: auto;
+}
+
+.Cart-Column {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 3vh;
+    margin-left: 4vh;
+    margin-bottom: 4vh;
+    padding: 3vh;
+    width: 25vh;
+    height: fit-content;
+}
+
+.Cart-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0vh;
+    margin-left: 13vh;
+    height: 5vh;
+}
+
+.Cart-Checkout {
+    position: absolute;
+    border-radius: 2vh;
+    width: 30vh;
+    height: 10vh;
+    background: linear-gradient(to right, #beac15, #6a6006);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2vh;
+    right: 11vh;
+    bottom: 27vh;
 }
