@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios' ;
 import './account.css'
 
 export default function Account() {
-
+  const [registrationError, setRegistrationError] = useState('');
+  
   const togglelog = () => {
     const login = document.querySelector('.reg');
     login?.classList.toggle('show');
@@ -17,6 +19,35 @@ const togglereg = () => {
   register?.classList.toggle('hide');
 }
 
+const handleRegistration = async (event) => {
+  event.preventDefault();
+
+  const form = event.target;
+  const email = form.email.value;
+  const username = form.uname.value;
+  const password = form.pass.value;
+
+  try {
+    const response = await axios.post('/api/register', {
+      email,
+      username,
+      password,
+    });
+
+    console.log('Registration successful');
+    console.log(response.data); // Az API válasza
+
+    // További teendők a sikeres regisztráció esetén
+
+    // Példa: Átirányítás a bejelentkezéshez
+    togglelog();
+  } catch (error) {
+    console.error('Registration failed');
+    console.error(error.response.data); // A hibaüzenet az API-tól
+
+    setRegistrationError('Registration failed. Please try again.'); // Beállítjuk a regisztrációs hiba üzenetét
+  }
+};
 
   return (
     <div className="form">
@@ -38,7 +69,7 @@ const togglereg = () => {
       </div>
 
       <h1 onClick={togglereg}> 
-        Change to Registration
+      <span className="psw">Don't have an account? Register <a href="#">here!</a></span>
       </h1> 
 
     </form>
@@ -67,8 +98,10 @@ const togglereg = () => {
       
 
     <h1 onClick={togglelog}>
-      Change to Login
+    <span className="psw">Already have an account? <a href="#">Login!</a></span>
     </h1>
+    {registrationError && <p className="error">{registrationError}</p>}
+
     </form>
     </div>
   </div>

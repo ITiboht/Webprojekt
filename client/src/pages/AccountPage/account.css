@@ -26,6 +26,7 @@ align-items: center;
 
 label{
     color: #e7b920;
+    font-size: medium;
 }
 
 .loginbar {
@@ -60,7 +61,7 @@ input[type=text], input[type=password] {
     color: white;
     padding: 15px 20px;
     margin-left: auto;
-    border: 5px solid #015201;
+    border: 1px solid black;
     cursor: pointer;
     width: 80%;
   }
@@ -71,7 +72,7 @@ input[type=text], input[type=password] {
 
 
 .reg{
-    font-size: small;
+    font-size: 1vh;
     user-select: none;
     display:none;
     color:aqua
@@ -79,7 +80,7 @@ input[type=text], input[type=password] {
 }
 
 .login{
-    font-size: small;
+    font-size: 1vh;
     user-select: none;
     color: aqua;
 }
