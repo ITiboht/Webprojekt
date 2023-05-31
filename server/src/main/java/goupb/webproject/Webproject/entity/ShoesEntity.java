@@ -20,7 +20,7 @@ public class ShoesEntity {
     private String id;
     private String brand;
     private String name;
-    private String imageLink;
+    private String imagelink;
     private String type;
 
     private List<Integer> sizes;

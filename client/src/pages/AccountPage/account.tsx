@@ -28,7 +28,7 @@ const handleRegistration = async (event) => {
   const password = form.pass.value;
 
   try {
-    const response = await axios.post('/api/register', {
+    const response = await axios.post('ide kellene az endpoint', {
       email,
       username,
       password,
@@ -98,7 +98,7 @@ const handleRegistration = async (event) => {
       
 
     <h1 onClick={togglelog}>
-    <span className="psw">Already have an account? <a href="#">Login!</a></span>
+    <span className="psw">Already have an account? <a href="/account">Login!</a></span>
     </h1>
     {registrationError && <p className="error">{registrationError}</p>}
 

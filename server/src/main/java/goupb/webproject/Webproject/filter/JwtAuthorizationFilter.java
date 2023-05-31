@@ -51,9 +51,9 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                     userDetails, null, Collections.emptyList()
-            );
+           );
 
-            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+           SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
             // We can add additional details to the request object, that we might retrieve and user later on,
             // in different filters or controllers.
