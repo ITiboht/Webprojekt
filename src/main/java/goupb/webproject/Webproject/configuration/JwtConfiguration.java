@@ -20,6 +20,7 @@ public class JwtConfiguration {
     public Algorithm hmac256Algorithm() {
         return Algorithm.HMAC256(jwtConfigurationProperties.getSecret());
     }
+    //used in jwtUtil
 
     @Bean
     public JWTVerifier jwtVerifier() {
