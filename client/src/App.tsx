@@ -9,7 +9,8 @@ import Store from './pages/StorePage/store.tsx';
 import Cart from './pages/CartPage/cart.tsx';
 import Shipping from './pages/ShippingPage/shipping.tsx';
 import Account from './pages/AccountPage/account.tsx';
-import About from './pages/AboutPage/about.tsx';
+import About from './pages/RegisterPage/register.tsx';
+import Register from './pages/RegisterPage/register.tsx';
 
 function App() {
   /*
@@ -45,7 +46,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       </div>
     </div>
