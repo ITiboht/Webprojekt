@@ -9,7 +9,7 @@ import Store from './pages/StorePage/store.tsx';
 import Cart from './pages/CartPage/cart.tsx';
 import Shipping from './pages/ShippingPage/shipping.tsx';
 import Account from './pages/AccountPage/account.tsx';
-import About from './pages/AboutPage/about.tsx';
+import Register from './pages/RegisterPage/register.tsx';
 import DataFetching from './components/http/DataFetching.tsx';
 
 function App() {
