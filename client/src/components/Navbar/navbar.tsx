@@ -57,7 +57,7 @@ export default function Navbar() {
                     <CustomLink to="/cart">Cart</CustomLink>
                     <CustomLink to="/shipping">Shipping</CustomLink>
                     <CustomLink to="/account">Account</CustomLink>
-                    <CustomLink to="/contact">Contact</CustomLink>
+                    <CustomLink to="/register">Register</CustomLink>
                 </ul>
             </div>
         </li>

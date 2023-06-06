@@ -1,6 +1,6 @@
 import React from 'react'
 import './shipping.css'
-import {Route, Routes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 
@@ -17,7 +17,7 @@ export default function() {
         <span className='informacio'>For those who are registered, delivery is free, and we can also send seasonal promotions.</span>
         
         <div>
-        <span className="accountpage">Go to account <a href="/account">page!</a></span>
+        <span className="accountpage">Go to account <Link to="/account">page!</Link></span>
         </div>
 
         <div className='shippings'>
