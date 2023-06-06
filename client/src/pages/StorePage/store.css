@@ -20,39 +20,8 @@
     flex: 1;
 }
 
-.col.filter {
-    flex: 0;  
-}
-
 .Store-Page .Header {
     color: #e7b920;
-}
-
-.Store-Filter {
-        display: flex;
-        flex-direction: column;
-        column-count: 1;
-        height: 50vh;
-        width: 30vh;
-        position: relative;
-        margin-top: 5vh;
-        padding: 5vh;
-        background-color: #535353;
-        justify-content: flex-start;
-        user-select: none;
-        text-transform: uppercase;
-        list-style-type: none;
-}
-
-.Store-Filter ul {
-    text-transform: capitalize;
-    display: inline;
-    list-style-type: none;
-}
-
-.Store-Filter li {
-    display: block;
-    margin-left: 1vh;
 }
 
 .Store-Grid {
@@ -75,11 +44,12 @@
     margin-bottom: 4vh;
     padding: 3vh;
     width: 20vh;
-    height: fit-content;
+    height: 30vh;
 }
 
 .Store-Item img {
-    width: 100%;
+    width: auto;
+    height: 15vh;
 }
 
 .Store-Item button {

@@ -1,6 +1,5 @@
 import React from 'react'
 import './store.css';
-import logo from '../../images/logo.png';
 import DataFetching from '../../components/http/DataFetching.tsx';
 
 const Store = () => {

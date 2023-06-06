@@ -1,6 +1,5 @@
 import React from 'react';
 import './home.css';
-import logo from '../../images/logo.png';
 import HomeData from '../../components/http/HomeData.tsx';
   
 const Home = () => {
