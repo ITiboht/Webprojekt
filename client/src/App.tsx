@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom'
 
 import './App.css';
-import logo from './images/logo.png';
 import Navbar from './components/Navbar/navbar.tsx';
 import Home from './pages/HomePage/home.tsx';
 import Store from './pages/StorePage/store.tsx';
@@ -10,7 +9,6 @@ import Cart from './pages/CartPage/cart.tsx';
 import Shipping from './pages/ShippingPage/shipping.tsx';
 import Account from './pages/AccountPage/account.tsx';
 import Register from './pages/RegisterPage/register.tsx';
-import DataFetching from './components/http/DataFetching.tsx';
 
 function App() {
   return (
