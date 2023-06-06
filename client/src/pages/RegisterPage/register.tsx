@@ -1,5 +1,6 @@
 import React from 'react'
 import './register.css'
+import { Link } from 'react-router-dom'
 
 export default function Account() {
  
@@ -24,10 +25,10 @@ export default function Account() {
       </div>
 
       <div className="button-container">
-        <button type="submit">Register</button>
+        <button type='submit'>Register</button>
       </div> 
     
-    <span className="psw">Already have an account? <a href="/account">Login!</a></span>
+    <span className="psw">Already have an account? <Link to="/account">Login!</Link></span>
 
     </form>
     </div>

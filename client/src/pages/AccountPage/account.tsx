@@ -25,7 +25,7 @@ export default function Account() {
         <button type="submit">Login</button>
       </div>
 
-      <span className="psw">Don't have an account? Register <Link to="/register">here!</Link></span>
+      <span className="valtozas">Don't have an account? Register <Link to="/register">here!</Link></span>
 
     </form>
     </div>
