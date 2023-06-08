@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import { ShopGrid } from './RenderShopGrid.tsx'
 
 function DataFetching() {
     
@@ -52,21 +53,7 @@ function DataFetching() {
         </div>
       <div className='row'>
         <div className='col'>
-        <div className='Store-Grid'>
-      { 
-        posts.map(post => (
-          <div className='Store-Item' key={post.id}>
-          <img src={post.imagelink} alt='Shoe Img' />
-          <div className='Store-Item-Info'>
-            <h3>{post.name}</h3>
-            <h4>{post.price}</h4>
-            <button>Buy Now</button>
-          </div>
-          </div>
-        )
-        )
-      }
-      </div> 
+         <ShopGrid posts={posts} />
       </div>
     </div>
     </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
-import logo from '../../images/logo.png';
 import './navbar.css';
 
 interface CustomLinkProps {

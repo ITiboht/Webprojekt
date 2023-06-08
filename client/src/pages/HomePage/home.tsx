@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.css';
-import HomeData from '../../components/http/HomeData.tsx';
+import HomeData from '../../components/HomeData.tsx';
   
 const Home = () => {
 
@@ -28,7 +28,7 @@ const Home = () => {
     */
 
   return (
-    <HomeData />
+    <HomeData/>
   );
 };
   

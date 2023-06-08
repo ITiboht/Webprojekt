@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Shoe} from './RenderSelectedItem.tsx';
+import {Slider} from './RenderSlider.tsx'
 
 interface Post {
   name: string;
@@ -29,11 +31,6 @@ function HomeData() {
         .catch((err) => console.log(err));
     }, []);
   
-    const handleItemClick = (post: Post, index: number) => {
-      setSelectedItem(post);
-      setSelectedIndex(index);
-    };
-  
     const increaseSelectedItem = () => {
       setSelectedIndex((prevIndex) => (prevIndex === posts.length - 1 ? 0 : prevIndex + 1));
     };
@@ -52,28 +49,10 @@ function HomeData() {
     <div className="Home-Page">
       {selectedItem ? (
         <div className="Home-Box">
-          <ul className="Shoe-Data">
-            <li className="Shoe-Name">{selectedItem.name}</li>
-            {selectedItem.brand && <li>{selectedItem.brand}</li>}
-            <li>{selectedItem.gender}</li>
-            <li>{selectedItem.color}</li>
-            {selectedItem.sizes && (
-              <li>
-                SIZES: {selectedItem.sizes.map((sizes) => (
-                  <span key={sizes}>{sizes} </span>
-                ))}
-              </li>
-            )}
-          </ul>
+          <Shoe selectedItem={selectedItem}/>
           <button className="Add-Shoe">Add to cart</button>
-          <img className="Shoe-Image" src={selectedItem.imagelink} alt="No image found sry :(" />
-          <div className="Slider">
-            <span className="Left-Arrow" onClick={decreaseSelectedItem}>←</span>
-            <span className="currID">{posts.indexOf(selectedItem) + 1}</span>
-            <span>/</span>
-            <span className="maxID">{posts.length}</span>
-            <span className="Right-Arrow" onClick={increaseSelectedItem}>→</span>
-          </div>
+          <img src={selectedItem.imagelink} />
+          <Slider posts={posts} selectedItem={selectedItem} inc={increaseSelectedItem} dec={decreaseSelectedItem} />
         </div>
       ) : (
         <p>Must've been the wind</p>

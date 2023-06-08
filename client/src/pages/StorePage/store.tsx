@@ -1,6 +1,6 @@
 import React from 'react'
 import './store.css';
-import DataFetching from '../../components/http/DataFetching.tsx';
+import DataFetching from '../../components/DataFetching.tsx';
 
 const Store = () => {
 
