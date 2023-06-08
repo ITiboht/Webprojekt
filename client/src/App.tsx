@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Routes} from 'react-router-dom'
 
 import './App.css';
-import logo from './images/logo.png';
 import Navbar from './components/Navbar/navbar.tsx';
 import Home from './pages/HomePage/home.tsx';
 import Store from './pages/StorePage/store.tsx';
