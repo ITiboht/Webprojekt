@@ -1,4 +1,3 @@
-import { json } from "react-router-dom";
 import { useToast } from '@chakra-ui/react'
 
 const TOKEN_NAME = 'authToken';
@@ -13,7 +12,7 @@ class AuthServiceImplementation {
     }
 
     public async login(username: string, password: string): Promise<string> {
-        const res = await fetch(`${API_URL}/post`, {
+        const res = await fetch(`${API_URL}/authentication`, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
@@ -39,15 +38,14 @@ class AuthServiceImplementation {
 
     }
 
-    public async registration(username: string, email: string, password: string, toast: ReturnType<typeof useToast>) {
-        const res = await fetch(`${API_URL}/register`, {
+    public async registration(username: string, password: string, toast: ReturnType<typeof useToast>) {
+        const res = await fetch(`${API_URL}/users/post`, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
                 "accept": "application/json"
             },
             body: JSON.stringify({
-                email,
                 username,
                 password,
             })
@@ -65,10 +63,6 @@ class AuthServiceImplementation {
         }
     }
 
-    public logout() {
-        this.authToken = null;
-    }
-
     public get authToken(): string | null {
         return this.storage.getItem(TOKEN_NAME) ?? null;
     }
@@ -80,12 +74,6 @@ class AuthServiceImplementation {
             this.storage.removeItem(TOKEN_NAME);
         }
     }
-
-    public async getProfile() {
-
-    }
-
-
 
 }
 
