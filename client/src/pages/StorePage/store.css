@@ -62,3 +62,9 @@
     background-color: black;
     color: #ddd;
 }
+
+.Search-Bar input {
+    border-radius: 2vh; 
+    background-color: #6b6b6b;
+    color: #ddd;
+}

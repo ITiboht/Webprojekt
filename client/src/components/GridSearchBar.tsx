@@ -1,9 +1,7 @@
-import React, {useEffect} from 'react';
-
 export function SearchBar({searchQuery, handleInputChange}){
 
     return (
-    <form>
+    <form className="Search-Bar">
         <input
         type="text"
         placeholder="Search..."

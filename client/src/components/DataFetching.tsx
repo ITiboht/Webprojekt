@@ -17,7 +17,6 @@ function DataFetching() {
       const filtered = posts.filter((post) =>
         post.name.includes(searchInput)
       );
-      console.log('Search: ' + searchInput);
       setFilteredPosts(filtered);
     }, [searchInput, posts]);
 
@@ -29,28 +28,6 @@ function DataFetching() {
   })
     .catch(err => console.log(err))
   }, [])
-    
-    /*
-    <div>
-            {posts.map(post => (<li key={post.id}>{post.name}</li>))}
-        </div>
-    */
-
-        /*
-        {
-          posts.map(post => (
-          <div className='Store-Item' key={post.id}>
-          <img src={logo} alt='logo' />
-          <div className='Store-Item-Info'>
-            <h3>{post.name}</h3>
-            <h4>{post.price}</h4>
-            <button>Buy Now</button>
-          </div>
-          </div>
-          )
-          )
-        }
-        */
     
     return (
       <div className='Store-Page'>
